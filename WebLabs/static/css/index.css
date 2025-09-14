@@ -1,0 +1,81 @@
+html
+{
+    min-width: 600px;
+}
+
+.select
+{
+    margin-top: 15px;
+}
+
+.subtask-item
+{
+    display: flex;
+    margin: 10px 10px 10px 0;
+}
+
+.subtask-input
+{
+    max-width: 500px;
+    margin-right: 10px;
+}
+
+.subtasks-container
+{
+    margin-top: 5px;
+}
+
+.notesTableDiv
+{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    justify-self: center;
+}
+
+.addBtnDiv
+{
+    margin-left: 10%;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+
+
+
+
+.modal {
+    display: none;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    margin: 15% auto;
+    padding: 20px;
+    max-width: 80%;
+    min-width: 600px;
+}
+
+.noteName
+{
+    margin-top: 15px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.subName{
+    cursor: pointer;
+}
+
+.form-check-input:checked + .subName {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+
+

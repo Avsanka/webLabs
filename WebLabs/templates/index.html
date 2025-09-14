@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   <link href="{{url_for('static', filename='css/index.css')}}" rel="stylesheet">
+
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="addBtnDiv">
+  <button class="btn btn-success" id="addRowBtn">Создать блокнот</button>
+</div>
+
+<div class="notesTableDiv">
+    <table class="table" id="myTable">
+      <thead>
+        <tr>
+          <th scope="col">Название</th>
+          <th scope="col">Дата</th>
+          <th scope="col">Приоритет</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+  </table>
+</div>
+
+
+<div id="myModal" class="modal">
+        <div class="modal-content">
+            <h3>Добавить новый блокнот</h3>
+            <input type="text" id="nameInput" class="noteName form-control" placeholder="Введите название">
+
+            <select class="select form-select" id="priorityInput">
+              <option value="1" selected>Низкий</option>
+              <option value="2">Средний</option>
+              <option value="3">Высокий</option>
+            </select>
+
+            <hr>
+            <div class="subtasks-container">
+                <h4>Подзадачи</h4>
+                <button type="button" class="btn btn-success" id="addSubtaskBtn">+ Добавить подзадачу</button>
+
+                <div class="subtasks-list" id="subtasksList">
+                    <!-- Для добавления саб-тасков -->
+                </div>
+            </div>
+
+            <div class="modal-buttons">
+                <button id="cancelBtn" class="btn btn-secondary">Отмена</button>
+                <button id="saveBtn" class="btn btn-success">Сохранить</button>
+            </div>
+        </div>
+</div>
+
+
+<div id="myModal2" class="modal">
+        <div class="modal-content">
+            <h3 id="noteLabel"></h3>
+            <input class="form-control" style="display: none;" id="noteLabelInput">
+
+            <p style="color: grey; margin-top: 15px;">Приоритет: </p>
+
+            <select class="form-select" id="detailsPriority">
+              <option value="1">Низкий</option>
+              <option value="2">Средний</option>
+              <option value="3">Высокий</option>
+            </select>
+
+            <hr>
+            <div class="subtasks-container">
+                <h4>Подзадачи</h4>
+
+
+                <div class="subtasks-list" id="subtasksDetails">
+
+
+                </div>
+                <button style="margin-top: 10px;" type="button" class="btn btn-success" id="detailsAddSubTaskBtn">+</button>
+            </div>
+
+            <div class="modal-buttons">
+                <button id="cancelDetailsBtn" class="btn btn-secondary">Отмена</button>
+                <button id="saveDetailsBtn" class="btn btn-success">Сохранить</button>
+            </div>
+        </div>
+</div>
+
+
+
+   <script src="{{url_for('static', filename='js/noteDetails.js')}}"></script>
+   <script src="{{url_for('static', filename='js/index.js')}}"></script>
+</body>
+</html>
