@@ -90,9 +90,17 @@ def editNote(id):
         db.commit()
     return "success", http.HTTPStatus(200)
 
+@app.route('/deleteNote/<int:id>', methods=['POST'])
+def deleteNote(id):
+    with myDbConnection().connect() as db:
+        cur = db.cursor()
+        cur.execute(f"delete from `notes` where Note_ID = {id}")
+        db.commit()
+    return "success", http.HTTPStatus(200)
+
+
 
 # ту ду:
-# - добавить комментарии (возможно)
 # - добавить удаление блокнота
 
 

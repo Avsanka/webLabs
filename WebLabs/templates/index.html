@@ -61,7 +61,11 @@
 
 <div id="myModal2" class="modal">
         <div class="modal-content">
-            <h3 id="noteLabel"></h3>
+
+
+            <h3 style="flex: 1" id="noteLabel"></h3>
+
+
             <input class="form-control" style="display: none;" id="noteLabelInput">
 
             <p style="color: grey; margin-top: 15px;">Приоритет: </p>
@@ -85,6 +89,7 @@
             </div>
 
             <div class="modal-buttons">
+                <button id="deleteNoteBtn" class="btn btn-danger">Удалить</button>
                 <button id="cancelDetailsBtn" class="btn btn-secondary">Отмена</button>
                 <button id="saveDetailsBtn" class="btn btn-success">Сохранить</button>
             </div>

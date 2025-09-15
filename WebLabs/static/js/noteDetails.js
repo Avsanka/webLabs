@@ -2,10 +2,22 @@ const addSubDetailsBtn = document.getElementById('detailsAddSubTaskBtn');
 const saveDetailsBtn = document.getElementById('saveDetailsBtn');
 const modalDetails = document.getElementById('myModal2');
 const cancelDetailsBtn = document.getElementById('cancelDetailsBtn');
+const deleteNoteBtn = document.getElementById('deleteNoteBtn');
 
 document.addEventListener('DOMContentLoaded', function() {
     const subContainer = document.getElementById('subtasksDetails');
 
+    deleteNoteBtn.addEventListener('click', function()
+    {
+        if(confirm('Вы уверены, что хотите удалить запись?'))
+        {
+            const id = document.getElementById('myModal2').getAttribute('data-id')
+            const rowToDelete = document.querySelector(`tr[data-id = "${id}"]`);
+            rowToDelete.remove();
+            modalDetails.style.display = 'none';
+            deleteFromDB(id);
+        }
+    });
 
     cancelDetailsBtn.addEventListener('click', function() {
         modalDetails.style.display = 'none';
@@ -212,4 +224,12 @@ function loadSubtasks(id)
                 saveDetailsBtn.disabled = false;
             }
         });
+}
+
+function deleteFromDB(id)
+{
+    $.ajax({
+        type: 'POST',
+        url: '/deleteNote/' + id,
+    });
 }
